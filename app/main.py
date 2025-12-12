@@ -21,6 +21,7 @@ from schemas import (
     CreateGraphRequest,
     GraphResponse,
     RunGraphRequest,
+    WorkflowRequest,
     WorkflowRunResponse,
     StateResponse,
     ErrorResponse,
@@ -392,7 +393,7 @@ async def list_tools():
 # ==================== Pre-built Workflows ====================
 
 @app.post("/workflows/code-review", response_model=WorkflowRunResponse)
-async def run_code_review(request: RunGraphRequest):
+async def run_code_review(request: WorkflowRequest):
     """
     Run the built-in Code Review workflow.
     

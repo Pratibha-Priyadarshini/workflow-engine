@@ -59,6 +59,11 @@ class RunGraphRequest(BaseModel):
     initial_state: Dict[str, Any] = Field(default_factory=dict)
 
 
+class WorkflowRequest(BaseModel):
+    """Request to run a pre-defined workflow."""
+    initial_state: Dict[str, Any] = Field(default_factory=dict)
+
+
 class ExecutionStepResponse(BaseModel):
     """Response containing a single execution step."""
     node_id: str
